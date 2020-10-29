@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>OPERADORES MATEMATICO</title>
 </head>
+ <?php 
+   require_once "lib.php";
+ ?>
 <body>
     <div class="container mt-2">
         <div class="row">
@@ -29,6 +32,9 @@
                             <option value="multiplicacion"<?php if($operador=='multiplicacion')echo "selected ='selected'"; ?>>multiplicacion</option>
                             <option value="divicion"<?php if($operador=='division')echo "selected ='selected'"; ?>>Division</option>
                             <option value="modulo"<?php if($operador=='modulo')echo "selected ='selected'"; ?>>Modulo</option>
+                            <option value="incremento"<?php if($operador=='incremento')echo "selected ='selected'"; ?>>Incremento</option>
+                            <option value="decremento"<?php if($operador=='decremento')echo "selected ='selected'"; ?>>Decremento</option>
+                            <option value="exponencial"<?php if($operador=='exponencial')echo "selected ='selected'"; ?>>Exponencial</option>
                         </select>
                     </div>
                     <button type="submit" name="enviar" value="enviar" class="btn btn-primary">Enviar</button>
@@ -43,25 +49,7 @@
                    if($botonEnviar == 'enviar') {
                        $num1 =$_GET['num1'] ?? 0;
                        $num2 =$_GET['num2'] ?? 0;
-                      if($operador=='suma'){
-                          echo 'el resultado de la operacion es:'.($num1+$num2);
-                      }
-                     else if($operador=='resta'){
-                        echo 'el resultado de la operacion es:'.($num1-$num2);
-                    }
-                    else if($operador=='multiplicacion'){
-                        echo 'el resultado de la operacion es:'.($num1*$num2);
-                    }
-                    else if($operador=='divicion'){
-                        echo 'el resultado de la operacion es:'.($num1/$num2);
-                    }
-                    else if($operador=='modulo'){
-                        echo 'el resultado de la operacion es:'.($num1%$num2);
-                    }
-                    if($operador =='') {
-                        echo 'debes seleccionar un operador matematico';
-                    }
-
+                       operacionesMat($operador, $num1, $num2);
                 }
                  ?>    
                 
@@ -70,4 +58,5 @@
         </div>
     </div>
 </body>
+ 
 </html>

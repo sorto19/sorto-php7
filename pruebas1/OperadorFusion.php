@@ -23,7 +23,7 @@
     <?php
     /* if(isset($_GET['edad'])== true) {
         if($_GET['edad']!= null) {
-            $edad == $_GET['edad'];
+            $edad == $_GET['edad']; //esto se haria sin utilizar el operador fusion 
         }else {
             $edad=0;
         }
