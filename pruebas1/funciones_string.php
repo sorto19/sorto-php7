@@ -23,6 +23,11 @@ echo substr($mensaje,10,7);//funcion sustraer cadena
 echo "<br>";
 echo trim("   hola          soy                       tu                   marido");
 echo "<br>";
+/* OPERADORES EN PHP*/
+$x=5;
+$y=32;
+echo $x % $y;
+echo "<br>";
 
 
 
